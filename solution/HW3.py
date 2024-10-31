@@ -77,7 +77,7 @@ def train_svm_model(X_train: np.ndarray, y_train: np.ndarray, kernel: str = 'lin
         kernel (str): The kernel type to be used in the algorithm (default is 'linear').
     '''
     if kernel == 'poly':
-        model = SVC(kernel=kernel, degree=3)  # Polynomial kernel with degree 3
+        model = SVC(kernel=kernel, degree=3)
     else:
         model = SVC(kernel=kernel)
     model.fit(X_train, y_train)
