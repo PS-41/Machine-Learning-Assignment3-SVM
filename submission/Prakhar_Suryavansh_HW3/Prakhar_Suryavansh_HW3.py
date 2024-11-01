@@ -32,7 +32,6 @@ def create_binary_label(df: pd.DataFrame, column: str) -> pd.DataFrame:
         pd.DataFrame: DataFrame with an additional binary label column.
     '''
     median_value = df[column].median()
-    print(median_value)
     df['binary_label'] = np.where(df[column] > median_value, 1, 0)
     return df
 
@@ -113,8 +112,6 @@ def find_best_config(df: pd.DataFrame, label: str, feature_combinations: list, k
                 best_accuracy = accuracy
                 best_features = features
                 best_kernel = kernel
-
-    print(best_accuracy, best_features, best_kernel)
 
     return best_features, best_kernel
 
